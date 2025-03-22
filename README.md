@@ -1,1 +1,1 @@
-# madrsa-sikariya-urdu
+# madrsa-sikariya-urdu  isko deleat nahi karna hai
