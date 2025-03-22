@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عطیات - Madrasa Sikariya</title>
+    <link rel="icon" href="image/icon1.png">
+    <script src="js/script.js"></script>
+    <script src="js/darkMode.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .donation-option {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: right;
+            direction: rtl;
+        }
+        
+        .donation-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .donation-amount {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .amount-btn {
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            flex-grow: 1;
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .amount-btn:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .custom-amount {
+            display: flex;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .custom-amount input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: right;
+            direction: rtl;
+        }
+        
+        .payment-methods {
+            margin-top: 30px;
+        }
+        
+        .payment-method {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: right;
+        }
+        
+        .payment-method:hover {
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bank-details {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .bank-details p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .qr-code {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .qr-code img {
+            max-width: 200px;
+            border: 5px solid white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-for-donation {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-for-donation h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .donation-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            text-align: right;
+            direction: rtl;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+        
+        .benefit-card p {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            line-height: 1.8;
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+            text-align: center;
+        }
+        
+        .zakat-section {
+            margin-top: 40px;
+            text-align: right;
+            direction: rtl;
+        }
+        
+        .donate-now-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .donate-now-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .donation-options,
+            .donation-benefits {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-amount {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            <div class="logo-section">
+                <img src="image/icon madrsa.jpg" alt="Madrasa Logo" class="logo">
+                <h2>Welcome to Madrasa Sikariya</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="nav-link"><i class="material-icons">home</i>Home</a></li>
+                <li><a href="index.html#introduction" class="nav-link"><i class="material-icons">info</i>Introduction</a></li>
+                <li><a href="index.html#media" class="nav-link"><i class="material-icons">perm_media</i>Media</a></li>
+                <li><a href="index.html#donation" class="nav-link"><i class="material-icons">volunteer_activism</i>Donation</a></li>
+                <li><a href="index.html#contact" class="nav-link"><i class="material-icons">contact_mail</i>Contact Us</a></li>
+                <li><a href="index.html#question-and-answer" class="nav-link"><i class="material-icons">question_answer</i>Question And Answer</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="mobile-header">
+                <button id="menuToggle" class="menu-toggle">
+                    <i class="material-icons">menu</i>
+                </button>
+                <h1>Madrasa Sikariya - عطیات</h1>
+            </div>
+
+            <section class="section donation-section">
+                <h2 class="section-title">عطیات کا صفحہ</h2>
+                
+                <div class="madrasa-intro">
+                    <h3 class="madrasa-name">دارالعلوم فیضان تاج الشریعہ سکریاں</h3>
+                    
+                    <div class="welcome-message">
+                        <p class="greeting">السلام علیکم ورحمۃ اللہ وبرکاتہ</p>
+                        <p class="intro-text">
+                            آپ کا عطیہ ہمارے مدرسہ کے بچوں کے لیے ایک نئی امید بن سکتا ہے۔ یہ بچے دین کی تعلیم حاصل کرنے کے لیے اپنے گھروں سے دور آتے ہیں اور ہمارے مدرسہ میں ان کی تعلیم و تربیت کا کام جاری ہے۔ آپ کا چھوٹا سا عطیہ ان بچوں کے مستقبل میں ایک اہم کردار ادا کر سکتا ہے۔
+                        </p>
+                    </div>
+                    
+                    <div class="donation-options">
+                        <div class="donation-option">
+                            <h3>مدرسہ کی تعمیر کے لیے عطیہ</h3>
+                            <p>آپ کا عطیہ ہمارے مدرسہ کی تعمیر کے لیے استعمال کیا جائے گا۔ یہ آپ کے لیے صدقہ جاریہ ہوگا جسکا ثواب آپکو ہمیشہ ملتا رہے گا۔</p>
+                            
+                            <div class="donation-amount">
+                                <div class="amount-btn">1000 ₹</div>
+                                <div class="amount-btn">5000 ₹</div>
+                                <div class="amount-btn">10000 ₹</div>
+                                <div class="amount-btn">25000 ₹</div>
+                            </div>
+                            
+                            <div class="custom-amount">
+                                <input type="number" placeholder="اپنی مرضی کے مطابق رقم" min="100">
+                            </div>
+                            
+                            <button class="donate-now-btn">عطیہ دیں</button>
+                        </div>
+                        
+                        <div class="donation-option">
+                            <h3>طلبہ کی مدد کے لیے عطیہ</h3>
+                            <p>آپ کا عطیہ ہمارے طلبہ کی تعلیم، رہائش اور کھانے کی ضروریات پوری کرنے کے لیے استعمال کیا جائے گا۔</p>
+                            
+                            <div class="donation-amount">
+                                <div class="amount-btn">500 ₹</div>
+                                <div class="amount-btn">1000 ₹</div>
+                                <div class="amount-btn">2000 ₹</div>
+                                <div class="amount-btn">5000 ₹</div>
+                            </div>
+                            
+                            <div class="custom-amount">
+                                <input type="number" placeholder="اپنی مرضی کے مطابق رقم" min="100">
+                            </div>
+                            
+                            <button class="donate-now-btn">عطیہ دیں</button>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h3 class="sub-section-title">عطیہ کے طریقے</h3>
+                        
+                        <div class="payment-method">
+                            <h4>بینک ٹرانسفر</h4>
+                            <p>آپ براہ راست ہمارے بینک اکاؤنٹ میں عطیہ بھیج سکتے ہیں۔</p>
+                            
+                            <div class="bank-details">
+                                <p><strong>Account Name:</strong> Darul Uloom Faizain-E-Tajushsharia Sikariyan</p>
+                                <p><strong>Account Number:</strong> 1234567890</p>
+                                <p><strong>IFSC Code:</strong> SBIN0010234</p>
+                                <p><strong>Bank Name:</strong> State Bank of India</p>
+                                <p><strong>Branch:</strong> Dehri-On-Sone, Rohtas, Bihar</p>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <h4>UPI کے ذریعے عطیہ</h4>
+                            <p>آپ UPI کے ذریعے بھی عطیہ بھیج سکتے ہیں۔ نیچے دیے گئے QR کوڈ کو اسکین کریں یا UPI ID استعمال کریں۔</p>
+                            
+                            <div class="qr-code">
+                                <!-- Replace with actual QR code image when available -->
+                                <img src="image/qr-placeholder.jpg" alt="UPI QR Code">
+                            </div>
+                            
+                            <div class="bank-details">
+                                <p><strong>UPI ID:</strong> madrasa.sikariyan@sbi</p>
+                                <p><strong>Phone Number for Payment:</strong> 9470463078</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="zakat-section">
+                        <h3 class="sub-section-title">زکٰوۃ و صدقات</h3>
+                        <p>آپ اپنی زکٰوۃ و صدقات بھی ہمارے مدرسہ کے لیے دے سکتے ہیں۔ یہ رقم طلبہ کی کفالت پر خرچ کی جائے گی۔</p>
+                    </div>
+                    
+                    <div class="donation-benefits">
+                        <div class="benefit-card">
+                            <i class="material-icons">school</i>
+                            <h4>علم کا فروغ</h4>
+                            <p>آپ کے عطیے سے ہم علم کا فروغ کر سکیں گے اور مزید طلبہ کو تعلیم دے سکیں گے۔</p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <i class="material-icons">home</i>
+                            <h4>مدرسے کی تعمیر</h4>
+                            <p>آپ کے عطیے سے ہم مدرسے کی عمارت مکمل کر سکیں گے جس سے مزید طلبہ کو رہنے کی جگہ مل سکے گی۔</p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <i class="material-icons">auto_stories</i>
+                            <h4>کتب و تعلیمی اشیاء</h4>
+                            <p>آپ کے عطیے سے ہم طلبہ کے لیے کتب اور دیگر تعلیمی اشیاء خرید سکیں گے۔</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-for-donation">
+                        <h3>مزید معلومات کے لیے رابطہ کریں</h3>
+                        <div class="contact-cards">
+                            <div class="contact-card">
+                                <h4>محمد عرفان</h4>
+                                <a href="tel://9470463078" class="contact-link">
+                                    <i class="material-icons">phone</i>
+                                    ۹۴۷۰۴۶۳۰۷۸
+                                </a>
+                            </div>
+                            
+                            <div class="contact-card">
+                                <h4>محمد ابرار</h4>
+                                <a href="tel://9973621173" class="contact-link">
+                                    <i class="material-icons">phone</i>
+                                    ۹۹۷۳۶۲۱۱۷۳
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer>
+                <div class="footer-content">
+                    <p>&copy;Copyright 2022 Madrasa Darul Uloom Faizain-E-Tajushsharia Sikariyan. All Rights Reserved</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu toggle for mobile
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+            }
+            
+            // Donation amount selection
+            const amountBtns = document.querySelectorAll('.amount-btn');
+            
+            amountBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    amountBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get the closest parent donation-option
+                    const donationOption = this.closest('.donation-option');
+                    
+                    // Clear the custom amount input in this donation option
+                    if (donationOption) {
+                        const customInput = donationOption.querySelector('input[type="number"]');
+                        if (customInput) {
+                            customInput.value = '';
+                        }
+                    }
+                });
+            });
+            
+            // Handle donate button clicks
+            const donateButtons = document.querySelectorAll('.donate-now-btn');
+            
+            donateButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const donationOption = this.closest('.donation-option');
+                    let amount = 0;
+                    
+                    if (donationOption) {
+                        const activeBtn = donationOption.querySelector('.amount-btn.active');
+                        const customInput = donationOption.querySelector('input[type="number"]');
+                        
+                        if (activeBtn) {
+                            amount = activeBtn.textContent.trim().replace('₹', '').trim();
+                        } else if (customInput && customInput.value) {
+                            amount = customInput.value;
+                        }
+                        
+                        if (amount > 0) {
+                            alert('آپ کے عطیے کے لیے شکریہ! آپ نے ' + amount + ' روپے کا عطیہ دینے کا فیصلہ کیا ہے۔ براہ کرم پیمنٹ کے طریقوں میں سے کسی ایک کا انتخاب کریں۔');
+                            
+                            // Scroll to payment methods
+                            const paymentMethods = document.querySelector('.payment-methods');
+                            if (paymentMethods) {
+                                paymentMethods.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        } else {
+                            alert('براہ کرم عطیہ کی رقم کا انتخاب کریں یا اپنی مرضی کے مطابق رقم درج کریں۔');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

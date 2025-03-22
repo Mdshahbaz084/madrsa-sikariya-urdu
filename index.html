@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Madrasa Sikariya</title>
+    <link rel="icon" href="image/icon1.png">
+    <script src="js/script.js"></script>
+    <script src="js/darkMode.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            <div class="logo-section">
+                <img src="image/icon madrsa.jpg" alt="Madrasa Logo" class="logo">
+                <h2>Welcome to Madrasa Sikariya</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link"><i class="material-icons">home</i>Home</a></li>
+                <li><a href="#introduction" class="nav-link"><i class="material-icons">info</i>Introduction</a></li>
+                <li><a href="#media" class="nav-link"><i class="material-icons">perm_media</i>Media</a></li>
+                <li><a href="#donation" class="nav-link"><i class="material-icons">volunteer_activism</i>Donation</a></li>
+                <li><a href="#contact" class="nav-link"><i class="material-icons">contact_mail</i>Contact Us</a></li>
+                <li><a href="#question-and-answer" class="nav-link"><i class="material-icons">question_answer</i>Question And Answer</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="mobile-header">
+                <button id="menuToggle" class="menu-toggle">
+                    <i class="material-icons">menu</i>
+                </button>
+                <h1>Welcome to Madrasa Sikariya</h1>
+            </div>
+
+            <section id="home" class="section">
+                <!-- Media Section with Auto-Sliding Images -->
+                <div class="dashboard-content media-dashboard">
+                    <section id="media" class="section media-section">
+                        <h2 class="section-title">میڈیا گیلری</h2>
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <div class="slide">
+                                    <img src="image slide/inside front.jpg" alt="Madrasa Front View">
+                                </div>
+                                <div class="slide">
+                                    <img src="image slide/inside intro.jpg" alt="Madrasa Interior">
+                                </div>
+                                <div class="slide">
+                                    <img src="image slide/inside view.jpg" alt="Madrasa View">
+                                </div>
+                                <div class="slide">
+                                    <img src="image slide/inside2.jpg" alt="Madrasa Interior 2">
+                                </div>
+                                <div class="slide">
+                                    <img src="image slide/inside4.jpg" alt="Madrasa Interior 4">
+                                </div>
+                            </div>
+                            <div class="slider-controls">
+                                <button class="prev-btn" onclick="changeSlide(-1)"><i class="material-icons">arrow_back</i></button>
+                                <div class="slider-dots">
+                                    <span class="dot active" onclick="jumpToSlide(0)"></span>
+                                    <span class="dot" onclick="jumpToSlide(1)"></span>
+                                    <span class="dot" onclick="jumpToSlide(2)"></span>
+                                    <span class="dot" onclick="jumpToSlide(3)"></span>
+                                    <span class="dot" onclick="jumpToSlide(4)"></span>
+                                </div>
+                                <button class="next-btn" onclick="changeSlide(1)"><i class="material-icons">arrow_forward</i></button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="dashboard-content introduction">
+                    <section id="introduction" class="section">
+                        <h2 class="section-title">Introduction</h2>
+                        <div class="madrasa-intro">
+                            <h3 class="madrasa-name">دارالعلوم فیضان تاج الشریعہ سکریاں</h3>
+                            
+                            <div class="welcome-message">
+                                <p class="greeting">السلام علیکم ورحمۃ اللہ وبرکاتہ</p>
+                                <p class="intro-text">
+                                    <strong>دارالعلوم فیضان تاج الشریعہ سکریاں</strong> میں آپ کا خیر مقدم ہے۔ ہمارا مدرسہ قرآن و سنت کی روشنی میں اسلامی تعلیم اور اخلاقی تربیت کا مرکز ہے۔ ہمارا مقصد طلبہ کو دینی علوم کے ساتھ ساتھ اخلاقی تربیت بھی دینا ہے تاکہ وہ معاشرے میں اپنا کردار بہتر طریقے سے ادا کر سکیں۔
+                                </p>
+                            </div>
+
+                            <div class="services">
+                                <h3 class="sub-section-title">ہماری خدمات</h3>
+                                <div class="service-list">
+                                    <div class="service-item">
+                                        <h4>تعلیم القرآن</h4>
+                                        <p>ہم قرآن مجید کی تعلیم تجوید کے ساتھ دیتے ہیں۔ طلبہ کو قرآن کی صحیح تلاوت، حفظ اور تفسیر کی تعلیم دی جاتی ہے۔ ہمارے اساتذہ قرآنی علوم میں مہارت رکھتے ہیں۔</p>
+                                    </div>
+                                    
+                                    <div class="service-item">
+                                        <h4>حدیث و فقہ</h4>
+                                        <p>حدیث اور فقہ کی تعلیم کے لیے ہمارے پاس ماہر اساتذہ موجود ہیں۔ طلبہ کو احادیث اور فقہی مسائل کی تفصیلی تعلیم دی جاتی ہے۔</p>
+                                    </div>
+                                    
+                                    <div class="service-item">
+                                        <h4>اسلامی تعلیم</h4>
+                                        <p>اسلامی تعلیمات، عقائد، اور تاریخ اسلام کی جامع تعلیم دی جاتی ہے۔ طلبہ کو اسلامی تہذیب و تمدن سے بھی آگاہ کیا جاتا ہے۔</p>
+                                    </div>
+                                    
+                                    <div class="service-item">
+                                        <h4>اخلاقی تربیت</h4>
+                                        <p>طلبہ کی اخلاقی تربیت پر خصوصی توجہ دی جاتی ہے۔ انہیں اسلامی اخلاقیات اور معاشرتی آداب کی تعلیم دی جاتی ہے۔</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="team-section">
+                                <h3 class="sub-section-title">ہمارے اساتذہ</h3>
+                                <p>ہمارے اساتذہ دینی علوم میں مہارت رکھنے والے اور تجربہ کار ہیں۔ وہ طلبہ کی تعلیم و تربیت کے لیے پوری توجہ دیتے ہیں۔</p>
+                            </div>
+
+                            <div class="admission-section">
+                                <h3 class="sub-section-title">داخلہ</h3>
+                                <div class="admission-info">
+                                    <p>اگر آپ اپنے بچوں کو <strong>دارالعلوم فیضان تاج الشریعہ سکریاں</strong> میں داخل کرنا چاہتے ہیں یا مزید معلومات حاصل کرنا چاہتے ہیں تو ہم سے رابطہ کریں۔</p>
+                                    <a href="#contact" class="button">رابطہ کریں</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        
+    <section id="donation" class="section donation-section">
+        <h2 class="section-title">عطیات</h2>
+        <div class="donation-content">
+            <div class="donation-card">
+                <h3 class="sub-section-title">مدرسہ کے بچوں کے لیے ایک محفوظ آشیانہ</h3>
+                <div class="donation-items">
+                    <div class="donation-item">
+                        <h4>السلام علیکم</h4>
+                        <p class="donation-text">
+                            ہمارے مدرسہ میں تعلیم حاصل کرنے والے معصوم بچے ایک محفوظ اور پرسکون آشیانہ کے محتاج ہیں۔ یہ بچے اپنی پوری زندگی دین کے علم کو حاصل کرنے اور اسے پھیلانے میں گزاریں گے، مگر آج وہ ایک چھت کے انتظار میں ہیں۔
+                        </p>
+                        <p class="donation-text">
+                            آپ کا دیا ہوا چھوٹا سا حصہ ان بچوں کے لیے ایک گھر بن سکتا ہے۔ ہر ایک اینٹ جو اس گھر میں لگے گی، وہ آپ کے لیے صدقہ جاریہ بنے گی جو قیامت تک آپ کے لیے ثواب کا ذریعہ بنے گی۔
+                        </p>
+                        <a href="donation.html" target="_blank" class="button donate-button">عطیہ دیں</a>
+                    </div>
+
+                    <div class="donation-item">
+                        <h4>مدرسہ کے بچوں کے لیے آپ کی ضرورت ہے</h4>
+                        <p class="donation-text">
+                            ان بچوں کے پاس آج ایک گھر نہیں ہے جہاں وہ اپنے سر کو تھام سکیں۔ آپ اپنی تھوڑی سی مدد سے ان کے لیے ایک چھت کا انتظام کر سکتے ہیں۔
+                        </p>
+                        <p class="donation-text">
+                            ہر پیسہ جو آپ ان بچوں کے لیے دیں گے، وہ آپ کی آخرت کے لیے ایک پایہ بنے گا۔ آپ کے دیا ہوا ہر پیسہ ان معصوم بچوں کو ایک محفوظ جگہ دے گا جہاں وہ اپنی زندگی کی بنیاد رکھیں گے۔
+                        </p>
+                        <a href="donation.html" target="_blank" class="button donate-button">عطیہ دیں</a>
+                    </div>
+
+                    <div class="donation-item">
+                        <h4>ایک گھر جو آپ کے احسان کا حصہ بنے گا</h4>
+                        <p class="donation-text">
+                            جب یہ بچے اس مدرسہ میں اپنا وقت گزار رہے ہوتے ہیں، تو وہ صرف تعلیم ہی نہیں حاصل کرتے، بلکہ اپنی زندگی کا وہ حصہ بنا رہے ہوتے ہیں جو آپ کے دیا ہوا ہوگا۔ آپ کی مدد سے ہم ان بچوں کے لیے ایک محفوظ گھر بنوا سکتے ہیں جہاں وہ سکون سے رہ سکتے ہیں اور اپنی تعلیم پر پوری توجہ دے سکتے ہیں۔
+                        </p>
+                        <a href="donation.html" target="_blank" class="button donate-button">عطیہ دیں</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">رابطہ کریں</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3 class="sub-section-title">داخلہ کے لیے رابطہ کریں</h3>
+                <p class="contact-text">
+                    اگر آپ اپنے بچوں کو ہمارے مدرسہ میں تعلیم دلوانا چاہتے ہیں، تو ہمیں رابطہ کریں۔ ہمارے مدرسہ میں تعلیم لینے والے بچے نہ صرف قرآن اور سنت کی تعلیم حاصل کرتے ہیں، بلکہ دنیا کے مقابلے کے لیے بھی تیار کیے جاتے ہیں۔
+                </p>
+                <p class="contact-text">
+                    آپ اپنے بچے کا داخلہ کروانے کے لیے نیچے دیے گئے نمبروں پر ہم سے رابطہ کر سکتے ہیں:
+                </p>
+                
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <h4>محمد عرفان</h4>
+                        <a href="tel://9470463078" class="contact-link">
+                            <i class="material-icons">phone</i>
+                            ۹۴۷۰۴۶۳۰۷۸
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h4>محمد ابرار</h4>
+                        <a href="tel://9973621173" class="contact-link">
+                            <i class="material-icons">phone</i>
+                            ۹۹۷۳۶۲۱۱۷۳
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-info">
+                <h3 class="sub-section-title">مقام</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d817.5385837494532!2d84.3499444!3d25.08025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1sen!2sin!4v1724840594494!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <p class="address">
+                    <i class="material-icons">location_on</i>
+                    گاؤں - سکریاں، تھانہ - کرکٹ (گوراری)، ضلع - روہتاس (بہار) ۸۲۱۳۱۰
+                </p>
+            </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-content">
+            <p>&copy;Copyright 2022 Madrasa Darul Uloom Faizain-E-Tajushsharia Sikariyan. All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    </main>
+   </div>
+</body>
+</html>
